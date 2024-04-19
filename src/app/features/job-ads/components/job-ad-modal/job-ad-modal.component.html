@@ -1,85 +1,55 @@
 <div class="container">
-  <h1>
-    {{ (vm$ | async)?.mode === "create" ? "Create new job" : "Edit job" }}
-  </h1>
-  <form [formGroup]="jobAdForm" (ngSubmit)="onSubmit()" class="form-container">
-    <mat-form-field>
-      <mat-label>Title</mat-label>
-      <input matInput formControlName="title" placeholder="Title" />
-      <mat-error
-        *ngIf="
-          jobAdForm.get('title')?.hasError('required') &&
-          jobAdForm.get('title')?.touched
-        "
-      >
-        Title is required
-      </mat-error>
-      <mat-error
-        *ngIf="
-          jobAdForm.get('title')?.hasError('titleExists') &&
-          jobAdForm.get('title')?.touched
-        "
-      >
-        Title already exists
-      </mat-error>
-    </mat-form-field>
+	<h1>
+		{{ (vm$ | async)?.mode === 'create' ? 'Create new job' : 'Edit job' }}
+	</h1>
+	<form [formGroup]="jobAdForm" (ngSubmit)="onSubmit()" class="form-container">
+		<mat-form-field>
+			<mat-label>Title</mat-label>
+			<input matInput formControlName="title" placeholder="Title" />
+			<mat-error *ngIf="jobAdForm.get('title')?.hasError('required') && jobAdForm.get('title')?.touched">
+				Title is required
+			</mat-error>
+			<mat-error *ngIf="jobAdForm.get('title')?.hasError('titleExists') && jobAdForm.get('title')?.touched">
+				Title already exists
+			</mat-error>
+		</mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Description</mat-label>
-      <textarea
-        matInput
-        formControlName="description"
-        placeholder="Description"
-      ></textarea>
-      <mat-error
-        *ngIf="
-          jobAdForm.get('description')?.invalid &&
-          jobAdForm.get('description')?.touched
-        "
-      >
-        Description is required and should be at least 10 characters
-      </mat-error>
-    </mat-form-field>
+		<mat-form-field>
+			<mat-label>Description</mat-label>
+			<textarea matInput formControlName="description" placeholder="Description"></textarea>
+			<mat-error *ngIf="jobAdForm.get('description')?.invalid && jobAdForm.get('description')?.touched">
+				Description is required and should be at least 10 characters
+			</mat-error>
+		</mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Skills</mat-label>
-      <mat-chip-grid #chipGrid aria-label="Enter skills">
-        <ng-container
-          *ngFor="let skill of jobAdForm.get('skills')?.value; let i = index"
-        >
-          <mat-chip-row (removed)="removeSkill(i)">
-            {{ skill }}
-            <button matChipRemove><mat-icon>cancel</mat-icon></button>
-          </mat-chip-row>
-        </ng-container>
-        <input
-          matInput
-          [matChipInputFor]="chipGrid"
-          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          [matChipInputAddOnBlur]="true"
-          (matChipInputTokenEnd)="addSkill($event)"
-          placeholder="New skill..."
-        />
-      </mat-chip-grid>
-    </mat-form-field>
-    <mat-error
-      *ngIf="
-        jobAdForm.get('skills')?.invalid && jobAdForm.get('skills')?.touched
-      "
-    >
-      At least one skill is required
-    </mat-error>
+		<mat-form-field>
+			<mat-label>Skills</mat-label>
+			<mat-chip-grid #chipGrid aria-label="Enter skills">
+				<ng-container *ngFor="let skill of jobAdForm.get('skills')?.value; let i = index">
+					<mat-chip-row (removed)="removeSkill(i)">
+						{{ skill }}
+						<button matChipRemove><mat-icon>cancel</mat-icon></button>
+					</mat-chip-row>
+				</ng-container>
+				<input
+					matInput
+					[matChipInputFor]="chipGrid"
+					[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+					[matChipInputAddOnBlur]="true"
+					(matChipInputTokenEnd)="addSkill($event)"
+					placeholder="New skill..."
+				/>
+			</mat-chip-grid>
+		</mat-form-field>
+		<mat-error *ngIf="jobAdForm.get('skills')?.invalid && jobAdForm.get('skills')?.touched">
+			At least one skill is required
+		</mat-error>
 
-    <div class="buttons">
-      <button mat-button (click)="onCancel()">Cancel</button>
-      <button
-        mat-button
-        color="primary"
-        type="submit"
-        [disabled]="jobAdForm.invalid"
-      >
-        {{ (vm$ | async)?.mode === "create" ? "Create" : "Save" }}
-      </button>
-    </div>
-  </form>
+		<div class="buttons">
+			<button mat-button (click)="onCancel()">Cancel</button>
+			<button mat-button color="primary" type="submit" [disabled]="jobAdForm.invalid">
+				{{ (vm$ | async)?.mode === 'create' ? 'Create' : 'Save' }}
+			</button>
+		</div>
+	</form>
 </div>

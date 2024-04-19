@@ -1,30 +1,25 @@
 <div class="container">
-  <div class="button">
-    <button mat-raised-button color="primary" (click)="createJobAd()">
-      <mat-icon>add</mat-icon>
-      Create New Job Ad
-    </button>
-  </div>
+	<div class="button">
+		<button mat-raised-button color="primary" (click)="createJobAd()">
+			<mat-icon>add</mat-icon>
+			Create New Job Ad
+		</button>
+	</div>
 
-  <div class="filter">
-    <mat-form-field>
-      <mat-label>Filter by query</mat-label>
-      <input matInput type="text" [formControl]="searchControl" />
-    </mat-form-field>
-  </div>
+	<div class="filter">
+		<mat-form-field>
+			<mat-label>Filter by query</mat-label>
+			<input matInput type="text" [formControl]="searchControl" />
+		</mat-form-field>
+	</div>
 
-  <div class="card-container">
-    <div
-      *ngFor="
-        let job of appFacade.jobAds$ | async | jobFilter : searchControl.value
-      "
-      class="app-job-ad-card"
-    >
-      <app-job-ad-card
-        [job]="job"
-        (statusChange)="changeAdStatus(job, $event)"
-        (deleteClick)="deleteJobAd(job.id)"
-      ></app-job-ad-card>
-    </div>
-  </div>
+	<div class="card-container">
+		<div *ngFor="let job of appFacade.jobAds$ | async | jobFilter: searchControl.value" class="app-job-ad-card">
+			<app-job-ad-card
+				[job]="job"
+				(statusChange)="changeAdStatus(job, $event)"
+				(deleteClick)="deleteJobAd(job.id)"
+			></app-job-ad-card>
+		</div>
+	</div>
 </div>

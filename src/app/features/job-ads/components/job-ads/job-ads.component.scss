@@ -1,46 +1,46 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .button {
-  margin-bottom: 10px;
-  align-self: flex-end;
+	margin-bottom: 10px;
+	align-self: flex-end;
 }
 
 .filter {
-  margin-bottom: 10px;
-  align-self: flex-end;
+	margin-bottom: 10px;
+	align-self: flex-end;
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
 }
 
 .app-job-ad-card {
-  display: block;
-  max-width: 900px;
-  width: 70vw;
-  margin: 24px;
+	display: block;
+	max-width: 900px;
+	width: 70vw;
+	margin: 24px;
 }
 
 .button button {
-  display: flex;
-  align-items: center;
-  background-color: #64b5f6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+	display: flex;
+	align-items: center;
+	background-color: #64b5f6;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 4px 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #42a5f5;
-  }
+	&:hover {
+		background-color: #42a5f5;
+	}
 }

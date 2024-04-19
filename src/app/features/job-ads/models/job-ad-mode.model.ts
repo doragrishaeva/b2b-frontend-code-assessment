@@ -1,4 +1,4 @@
 export enum JobAdMode {
-  Create = 'create',
-  Edit = 'edit',
+	Create = 'create',
+	Edit = 'edit',
 }

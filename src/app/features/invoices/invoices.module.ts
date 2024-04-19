@@ -6,7 +6,7 @@ import { InvoiceComponent, InvoiceListComponent } from './components';
 import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
-  declarations: [InvoiceListComponent, InvoiceComponent],
-  imports: [CommonModule, InvoicesRoutingModule, MaterialModule],
+	declarations: [InvoiceListComponent, InvoiceComponent],
+	imports: [CommonModule, InvoicesRoutingModule, MaterialModule],
 })
 export class InvoicesModule {}

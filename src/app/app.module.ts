@@ -13,19 +13,19 @@ import { JobAdsModule } from './features/job-ads/job-ads.module';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    CoreModule,
-    MaterialModule,
-    JobAdsModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		BrowserAnimationsModule,
+		AppRoutingModule,
+		CoreModule,
+		MaterialModule,
+		JobAdsModule,
+		StoreModule.forRoot({}),
+		EffectsModule.forRoot([]),
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

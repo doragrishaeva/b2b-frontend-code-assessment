@@ -1,35 +1,35 @@
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
 }
 
 .invoice-card {
-  display: block;
-  max-width: 900px;
-  width: 70vw;
-  margin: 24px;
+	display: block;
+	max-width: 900px;
+	width: 70vw;
+	margin: 24px;
 }
 
 mat-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
 }
 
 .additional-info {
-  text-align: right;
-  margin-left: 24px;
+	text-align: right;
+	margin-left: 24px;
 }
 
 mat-card-title {
-  margin: 0;
+	margin: 0;
 }
 
 .no-invoices {
-  font-size: 21px;
-  color: #64b5f6;
-  margin-top: 24px;
+	font-size: 21px;
+	color: #64b5f6;
+	margin-top: 24px;
 }

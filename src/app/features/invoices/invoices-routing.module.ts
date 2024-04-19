@@ -5,7 +5,7 @@ import { InvoiceListComponent } from './components';
 const routes: Routes = [{ path: '', component: InvoiceListComponent }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule],
 })
 export class InvoicesRoutingModule {}

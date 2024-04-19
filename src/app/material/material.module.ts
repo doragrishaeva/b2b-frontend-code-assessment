@@ -9,24 +9,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatIconModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatInputModule,
-    MatTooltipModule,
-  ],
-  exports: [
-    MatCardModule,
-    MatIconModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatInputModule,
-    MatTooltipModule,
-  ],
+	imports: [
+		CommonModule,
+		MatCardModule,
+		MatIconModule,
+		MatChipsModule,
+		MatFormFieldModule,
+		MatDialogModule,
+		MatInputModule,
+		MatTooltipModule,
+	],
+	exports: [
+		MatCardModule,
+		MatIconModule,
+		MatChipsModule,
+		MatFormFieldModule,
+		MatDialogModule,
+		MatInputModule,
+		MatTooltipModule,
+	],
 })
 export class MaterialModule {}
