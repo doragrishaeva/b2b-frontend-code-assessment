@@ -31,7 +31,7 @@ export class JobAdModalComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: JobAdComponentStore,
+    public store: JobAdComponentStore,
     private route: ActivatedRoute
   ) {}
 

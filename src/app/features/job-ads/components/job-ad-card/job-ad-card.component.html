@@ -6,7 +6,7 @@
         <mat-icon
           *ngIf="job.status === 'draft'"
           (click)="changeAdStatus('published')"
-          class="action-icon"
+          class="action-icon publish-icon"
           matTooltip="Publish"
           matTooltipPosition="above"
         >
@@ -15,7 +15,7 @@
         <mat-icon
           *ngIf="job.status === 'draft' || job.status === 'published'"
           (click)="changeAdStatus('archived')"
-          class="action-icon"
+          class="action-icon archive-icon"
           matTooltip="Archive"
           matTooltipPosition="above"
         >
@@ -34,11 +34,21 @@
     </div>
     <div class="header-right">
       <div class="buttons">
-        <button mat-icon-button color="primary" (click)="editJobAd(job.id)">
+        <button
+          mat-icon-button
+          color="primary"
+          class="edit-button"
+          (click)="editJobAd(job.id)"
+        >
           <mat-icon>edit</mat-icon>
           <span>Edit</span>
         </button>
-        <button mat-icon-button color="warn" (click)="deleteJobAd(job.id)">
+        <button
+          mat-icon-button
+          color="warn"
+          class="delete-button"
+          (click)="deleteJobAd(job.id)"
+        >
           <mat-icon>delete</mat-icon>
           <span>Delete</span>
         </button>

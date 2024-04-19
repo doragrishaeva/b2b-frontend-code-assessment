@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { StoreModule } from '@ngrx/store';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { AppFacade } from '../../../../core/store';
 import { InvoiceListComponent } from './invoice-list.component';
 
 describe('InvoiceListComponent', () => {
@@ -8,7 +10,9 @@ describe('InvoiceListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InvoiceListComponent],
+      declarations: [InvoiceListComponent],
+      imports: [HttpClientTestingModule, StoreModule.forRoot({})],
+      providers: [AppFacade],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InvoiceListComponent);

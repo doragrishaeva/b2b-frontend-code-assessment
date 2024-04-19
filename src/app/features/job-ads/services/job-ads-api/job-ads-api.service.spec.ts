@@ -8,15 +8,14 @@ import { of } from 'rxjs';
 import { StoreModule } from '@ngrx/store';
 
 import { JobAdsApiService } from './job-ads-api.service';
-import { JobAdsFacade } from '../../store/facades';
-import { JobAd, JobAdStatus } from '../../models/job-ad.model';
-import { reducer } from '../../store/reducers';
+import { AppFacade, reducer } from '../../../../core/store';
+import { JobAd, JobAdStatus } from '../../../../shared/models';
 
 describe('JobAdsApiService', () => {
   let service: JobAdsApiService;
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
-  let jobAdsFacade: JobAdsFacade;
+  let appFacade: AppFacade;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -24,12 +23,12 @@ describe('JobAdsApiService', () => {
         HttpClientTestingModule,
         StoreModule.forRoot({ jobAds: reducer }),
       ],
-      providers: [JobAdsFacade],
+      providers: [AppFacade],
     });
     service = TestBed.inject(JobAdsApiService);
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
-    jobAdsFacade = TestBed.inject(JobAdsFacade);
+    appFacade = TestBed.inject(AppFacade);
   });
 
   afterEach(() => {
@@ -52,12 +51,12 @@ describe('JobAdsApiService', () => {
         },
       ];
       spyOn(httpClient, 'get').and.returnValue(of(jobAds));
-      spyOn(jobAdsFacade, 'setJobAds');
+      spyOn(appFacade, 'setJobAds');
 
       service.getAllJobAds().subscribe();
 
       expect(httpClient.get).toHaveBeenCalledWith(service['baseUrl']);
-      expect(jobAdsFacade.setJobAds).toHaveBeenCalledWith(jobAds);
+      expect(appFacade.setJobAds).toHaveBeenCalledWith(jobAds);
     });
   });
 });

@@ -15,7 +15,7 @@ import { AppFacade } from '../../../../core/store';
 export class JobAdsComponent {
   constructor(
     public appFacade: AppFacade,
-    private router: Router,
+    public router: Router,
     private api: JobAdsApiService
   ) {}
 

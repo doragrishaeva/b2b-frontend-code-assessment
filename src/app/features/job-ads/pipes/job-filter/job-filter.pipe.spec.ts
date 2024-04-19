@@ -1,5 +1,5 @@
 import { JobFilterPipe } from './job-filter.pipe';
-import { JobAd } from '../../models/job-ad.model';
+import { JobAd } from '../../../../shared/models';
 
 describe('JobFilterPipe', () => {
   let pipe: JobFilterPipe;
