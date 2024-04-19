@@ -1,5 +1,5 @@
 header {
-	background-color: #64b5f6;
+	background-color: #011440;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -9,6 +9,8 @@ header {
 
 	h1 {
 		margin: 0;
+		text-transform: uppercase;
+		font-weight: 600;
 	}
 
 	nav {

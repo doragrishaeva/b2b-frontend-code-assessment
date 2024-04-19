@@ -1,7 +1,7 @@
 .mat-card {
 	box-shadow:
-		2px 4px 6px rgba(0, 0, 0, 0.3),
-		2px 2px 4px rgba(0, 0, 0, 0.3);
+		3px 4px 6px rgba(0, 0, 0, 0.6),
+		3px 3px 4px rgba(0, 0, 0, 0.6);
 	max-width: 800px;
 	margin: 0 auto;
 	margin-bottom: 16px;
@@ -60,7 +60,7 @@ mat-card-title {
 .buttons button {
 	display: flex;
 	align-items: center;
-	background-color: #64b5f6;
+	background-color: #011440;
 	color: white;
 	border: none;
 	border-radius: 4px;
@@ -75,7 +75,7 @@ mat-card-title {
 
 .action-icon {
 	cursor: pointer;
-	color: #64b5f6;
+	color: #011440;
 	margin-left: 5px;
 	vertical-align: baseline;
 

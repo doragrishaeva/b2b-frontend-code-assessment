@@ -5,6 +5,10 @@ body {
 	height: 100%;
 }
 body {
+	background: url('./app/assets/bg.svg') no-repeat center center fixed;
+	background-size: cover;
+	background-color: rgba(255, 255, 255, 0.6);
+	font-family: 'Raleway', sans-serif;
 	margin: 0;
-	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	padding: 0;
 }
