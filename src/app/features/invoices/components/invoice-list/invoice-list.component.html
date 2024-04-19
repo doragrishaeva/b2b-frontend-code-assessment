@@ -1,0 +1,27 @@
+<div class="card-container" *ngIf="vm$ | async as vm">
+  <ng-container *ngIf="vm.invoices && vm.invoices.length > 0; else noInvoices">
+    <div *ngFor="let invoice of vm.invoices" class="app-job-ad-card">
+      <mat-card>
+        <mat-card-header>
+          <div>
+            <mat-card-title>
+              {{ (appFacade.jobAds$ | async)?.get(invoice.jobAdId)?.title }}
+            </mat-card-title>
+          </div>
+          <div>
+            <div class="additional-info">
+              <p>
+                <b>Amount:</b>
+                {{ invoice.amount | currency : "USD" : "symbol" }}
+              </p>
+              <p><b>Due Date:</b> {{ invoice.dueDate | date }}</p>
+            </div>
+          </div>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </ng-container>
+  <ng-template #noInvoices>
+    <div class="no-invoices">No invoices for now...</div>
+  </ng-template>
+</div>

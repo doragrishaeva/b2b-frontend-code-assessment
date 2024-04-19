@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  public title = 'job-ads-app';
+  public title = 'Job Board';
 }
